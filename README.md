@@ -5,7 +5,7 @@ https://spowickj.github.io/Spowickj.frontier.studio/
 
 ## Страницы
 - `index.html` — главная, услуги, портфолио и контактная форма.
-- `about.html` — подход и принципы студии.
+- `about.html` — подход и принципы студии.\n- `privacy.html` — описание передачи сообщений через сторонний сервис формы.
 - `drip.html` — демонстрационный концепт магазина с фильтрами и корзиной.
 - `projects/frontier.html` — описание концепта FRONTIER.
 - `projects/drip.html` — описание концепта DRIP.
