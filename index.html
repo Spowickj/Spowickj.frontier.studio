@@ -75,6 +75,71 @@ footer a:hover{color:var(--accent)}
 }
 @media(prefers-reduced-motion:reduce){.photo,.project,.btn{transition:none}}
 
+</style>
+<style id="frontier-premium-refresh">
+:root{--bg:#0b0c0d;--panel:#121416;--cream:#f4f1e9;--muted:#a3a5a3;--line:#292d2e;--accent:#e58a50;--accent-soft:#f3b17c;--glow:rgba(229,138,80,.17)}
+html{scroll-padding-top:100px;background:var(--bg)}
+body{background:radial-gradient(ellipse at 82% 8%,rgba(229,138,80,.075),transparent 34%),var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;letter-spacing:-.018em}
+::selection{background:var(--accent);color:#111}
+header{background:rgba(11,12,13,.78);backdrop-filter:blur(22px) saturate(150%);border-bottom:1px solid rgba(255,255,255,.09)}
+.nav{height:82px}.logo{font-family:"Space Grotesk",sans-serif;font-size:17px;letter-spacing:.17em}.logo b{color:var(--accent)}
+nav{gap:clamp(13px,2vw,28px);font-size:12px;color:#b7b7b1}nav a{transition:color .2s}
+.nav>.btn{padding:13px 18px;border:1px solid rgba(229,138,80,.55);background:transparent;color:var(--cream)}
+.menu-toggle{border:1px solid var(--line);background:transparent;color:var(--cream);padding:10px 13px}
+.hero{min-height:min(820px,calc(100svh - 82px));border-bottom:1px solid var(--line);isolation:isolate}
+.hero:before{background:linear-gradient(90deg,rgba(11,12,13,.97) 0%,rgba(11,12,13,.86) 42%,rgba(11,12,13,.44) 100%),linear-gradient(0deg,#0b0c0d 0%,transparent 32%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=90') center 46%/cover;filter:saturate(.68);transform:scale(1.025)}
+.hero:after{content:"";position:absolute;z-index:-1;width:min(54vw,740px);aspect-ratio:1;border:1px solid rgba(229,138,80,.17);border-radius:50%;right:-13%;top:8%;box-shadow:0 0 0 70px rgba(229,138,80,.025),0 0 0 140px rgba(229,138,80,.018);pointer-events:none}
+.hero .wrap{padding:clamp(100px,14vh,160px) 0 125px}
+.hero .eyebrow,.eyebrow{font-size:10px;letter-spacing:.24em;color:var(--accent);font-weight:800}
+.hero h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(68px,10.3vw,144px);line-height:.86;letter-spacing:-.095em;max-width:980px;margin:32px 0 28px}
+.hero em,h2 em{font-family:"Space Grotesk",sans-serif;font-weight:500;color:var(--accent-soft);font-style:normal}
+.hero p{max-width:610px;color:#d0d0c9;font-size:clamp(16px,1.5vw,19px);line-height:1.75}
+.hero .hero-trust{max-width:560px;margin-top:25px;padding:2px 0 2px 17px;border-left:1px solid var(--accent);font-size:12px;color:#bcbcb4}
+.hero-trust span{font-size:9px;letter-spacing:.18em}
+.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 21px;background:var(--accent);color:#15120f;border:1px solid var(--accent);font-size:11px;letter-spacing:.1em;transition:transform .25s,background .25s,border-color .25s}
+.btn.alt{background:rgba(255,255,255,.035);color:var(--cream);border-color:rgba(255,255,255,.2)}
+.btn:hover{transform:translateY(-3px);background:var(--accent-soft);border-color:var(--accent-soft);color:#15120f}
+.service-link{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(229,138,80,.5);padding-bottom:4px;transition:color .2s,border-color .2s}
+.service-link:hover{color:var(--accent-soft);border-color:var(--accent-soft)}
+section{padding:clamp(82px,10vw,136px) 0}
+.head{align-items:end;margin-bottom:52px;gap:40px}
+.head h2{font:600 clamp(42px,6.2vw,76px)/.98 "Space Grotesk",sans-serif;letter-spacing:-.075em;margin:17px 0 0}
+.head p{max-width:410px;font-size:14px;line-height:1.8;color:var(--muted)}
+.projects{grid-template-columns:1.15fr .85fr;gap:18px}
+.project{background:linear-gradient(145deg,#171a1b,#101213);border:1px solid #303536;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.project:hover{transform:translateY(-7px);border-color:rgba(229,138,80,.6);box-shadow:0 22px 70px rgba(0,0,0,.25)}
+.photo{height:clamp(250px,29vw,390px);position:relative;overflow:hidden;transition:transform .6s}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,10,10,.36),transparent 55%);pointer-events:none}
+.project:hover .photo{transform:scale(1.015)}
+.p1{background-image:linear-gradient(135deg,rgba(11,12,13,.08),rgba(11,12,13,.2)),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=90')}
+.p2{background-image:linear-gradient(135deg,rgba(11,12,13,.05),rgba(11,12,13,.18)),url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=90')}
+.details{padding:26px 28px 30px}.details small{font-size:9px;letter-spacing:.19em}.details h3{font:600 clamp(27px,3vw,38px)/1 "Space Grotesk",sans-serif;letter-spacing:-.06em}
+.details p,.service p,.step p{font-size:13px;line-height:1.8;color:var(--muted)}
+.services{border-color:var(--line)}
+.service{border-color:var(--line);transition:background .25s,padding .25s}
+.service-grid .service{padding:32px 26px 34px 0}
+.service-grid .service:nth-child(even){padding-left:30px}
+.service-grid .service:hover{background:linear-gradient(100deg,rgba(229,138,80,.045),transparent 85%)}
+.service h3{font:600 24px/1.15 "Space Grotesk",sans-serif;letter-spacing:-.045em}
+.price{font:600 30px "Space Grotesk",sans-serif;letter-spacing:-.05em}
+.price-details{border-color:var(--line)}
+.steps{gap:22px}
+.step{border-top:1px solid rgba(229,138,80,.75);padding-top:20px}
+.step h3{font:600 21px "Space Grotesk",sans-serif;letter-spacing:-.04em}
+.contact{gap:clamp(30px,7vw,100px)}
+.contact h2{font:600 clamp(50px,7vw,88px)/.92 "Space Grotesk",sans-serif;letter-spacing:-.08em}
+input,textarea,select{background:#111416;border:1px solid #303536;border-radius:2px;padding:16px 17px;transition:border-color .2s,background .2s}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);background:#15191a;box-shadow:0 0 0 3px rgba(229,138,80,.08)}
+form .btn{width:100%;min-height:52px}
+.faq-list{border-color:var(--line)}.faq-list details{border-color:var(--line);padding:22px 2px}.faq-list summary{font:600 16px "DM Sans",sans-serif}.faq-list details[open]{background:linear-gradient(90deg,rgba(229,138,80,.045),transparent);padding-left:12px}
+footer{border-top:1px solid var(--line)}.foot{gap:22px;align-items:center}.foot a:hover{color:var(--accent)}
+#standards .service{min-height:180px}
+.reveal{will-change:transform}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:850px){.nav{height:70px}.nav>.btn{display:none}.hero{min-height:650px}.hero:after{right:-45%;top:25%}.projects{grid-template-columns:1fr 1fr}.photo{height:260px}}
+@media(max-width:620px){.hero{min-height:650px}.hero .wrap{padding:90px 0}.hero h1{font-size:clamp(62px,15vw,88px)}.hero:before{background:linear-gradient(90deg,rgba(11,12,13,.94),rgba(11,12,13,.68)),linear-gradient(0deg,#0b0c0d,transparent 55%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85') center/cover}.projects,.service-grid,.steps,.contact{grid-template-columns:1fr}.service-grid .service,.service-grid .service:nth-child(even){padding:25px 0;border-left:0}.photo{height:250px}.head{display:block}.head p{margin-top:18px}.foot{flex-wrap:wrap;gap:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style></head><body class="js">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 <header><div class="wrap nav"><a class="logo" href="#">FRONTIER<b>.</b></a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav">Меню ☰</button><nav id="primaryNav" aria-label="Основная навигация"><a href="#work">Работы</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#standards">Правила</a><a href="./about.html">О студии</a><a href="./brief.html">Бриф</a><a href="#contact">Контакт</a></nav><a class="btn alt" href="#contact">Обсудить проект ↗</a></div></header>
