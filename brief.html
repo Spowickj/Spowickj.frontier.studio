@@ -69,7 +69,8 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)!important;box
 <style id="frontier-brief-wizard">
 .brief-progress{display:flex;gap:8px;margin:28px 0 22px}.brief-progress span{height:4px;flex:1;border-radius:10px;background:#303536}.brief-progress span.active{background:var(--accent)}.brief-step[hidden]{display:none!important}.brief-step{display:grid;gap:22px}.brief-step-title{display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:12px;margin-bottom:4px}.brief-step-title strong{color:var(--cream);font-size:15px}.brief-step-actions{display:flex;gap:12px;margin-top:8px}.brief-step-actions .btn{flex:1}.brief-step-actions .btn.secondary{background:transparent;color:var(--cream);border:1px solid var(--line)}.estimate-notice{margin:18px 0 24px;padding:16px 18px;border:1px solid rgba(229,138,80,.3);border-radius:16px;background:rgba(229,138,80,.07);color:var(--muted);font-size:13px}.estimate-notice strong{color:var(--accent-soft)}.brief-progress-label{font-size:11px;color:var(--muted);margin-bottom:8px}
 @media(max-width:620px){.brief-step-actions{flex-direction:column}.brief-step-actions .btn{width:100%}}
-</style>\n</head>
+</style>
+</head>
 <body>
 <header><div class="wrap"><a class="brand" href="./">FRONTIER<b>.</b></a><a class="back" href="./">← На главную</a></div></header>
 <main class="wrap">
@@ -132,7 +133,8 @@ for(let i=0;i<3;i++){const bar=document.createElement('span');if(i===0)bar.class
 form.prepend(progress);
 const progressBars=[...progress.children];let activeStep=0;
 function showStep(index){activeStep=index;steps.forEach((step,i)=>step.hidden=i!==index);progressBars.forEach((bar,i)=>bar.classList.toggle('active',i<=index));const title=steps[index].querySelector('.brief-step-title');title.querySelector('span').textContent='Шаг '+(index+1)+' из 3';title.scrollIntoView({behavior:'smooth',block:'nearest'})}
-function validateStep(section){for(const field of section.querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){field.reportValidity();field.focus();return false}}return true}\nfunction validateAllSteps(){for(let i=0;i<steps.length;i++){for(const field of steps[i].querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){showStep(i);field.reportValidity();field.focus();return false}}}return true}
+function validateStep(section){for(const field of section.querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){field.reportValidity();field.focus();return false}}return true}
+function validateAllSteps(){for(let i=0;i<steps.length;i++){for(const field of steps[i].querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){showStep(i);field.reportValidity();field.focus();return false}}}return true}
 const params=new URLSearchParams(location.search),estimate=params.get('estimate');
 if(estimate){
  const banner=document.createElement('div');banner.className='estimate-notice';banner.innerHTML='<strong>Расчёт с главной страницы:</strong> <span></span><br>Это предварительный ориентир, не окончательная смета.';
