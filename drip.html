@@ -41,7 +41,7 @@ const money=n=>new Intl.NumberFormat("ru-RU").format(n)+" ₽";
 const productsEl=document.getElementById("products");
 function renderProducts(filter="all"){
  const list=products.filter(p=>filter==="all"||p.cat===filter);
- productsEl.innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-image" style="background-image:url('${p.img}')"><span class="tag">${p.tag}</span></div><h3>${p.name}</h3><div class="product-meta"><span class="muted">DRIP / 001</span><strong>${money(p.price)}</strong></div><button class="add" type="button" data-add="${p.id}">Добавить в корзину +</button></article>`).join("");
+ productsEl.innerHTML=list.map(p=>`<article class="product"><div class="product-image" style="background-image:url('${p.img}')"><span class="tag">${p.tag}</span></div><h3>${p.name}</h3><div class="product-meta"><span class="muted">DRIP / 001</span><strong>${money(p.price)}</strong></div><button class="add" type="button" data-add="${p.id}">Добавить в корзину +</button></article>`).join("");
  productsEl.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{const id=Number(b.dataset.add);cart[id]=(cart[id]||0)+1;saveCart();renderCart();announceCart(products.find(p=>p.id===id).name+" добавлен в корзину");b.textContent="Добавлено ✓";setTimeout(()=>b.textContent="Добавить в корзину +",900)}));
 }
 function renderCart(){
