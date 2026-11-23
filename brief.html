@@ -66,7 +66,10 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)!important;box
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
 </style>
 
-</head>
+<style id="frontier-brief-wizard">
+.brief-progress{display:flex;gap:8px;margin:28px 0 22px}.brief-progress span{height:4px;flex:1;border-radius:10px;background:#303536}.brief-progress span.active{background:var(--accent)}.brief-step[hidden]{display:none!important}.brief-step{display:grid;gap:22px}.brief-step-title{display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:12px;margin-bottom:4px}.brief-step-title strong{color:var(--cream);font-size:15px}.brief-step-actions{display:flex;gap:12px;margin-top:8px}.brief-step-actions .btn{flex:1}.brief-step-actions .btn.secondary{background:transparent;color:var(--cream);border:1px solid var(--line)}.estimate-notice{margin:18px 0 24px;padding:16px 18px;border:1px solid rgba(229,138,80,.3);border-radius:16px;background:rgba(229,138,80,.07);color:var(--muted);font-size:13px}.estimate-notice strong{color:var(--accent-soft)}.brief-progress-label{font-size:11px;color:var(--muted);margin-bottom:8px}
+@media(max-width:620px){.brief-step-actions{flex-direction:column}.brief-step-actions .btn{width:100%}}
+</style>\n</head>
 <body>
 <header><div class="wrap"><a class="brand" href="./">FRONTIER<b>.</b></a><a class="back" href="./">← На главную</a></div></header>
 <main class="wrap">
@@ -74,7 +77,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)!important;box
 <h1>Расскажите о<br><em>вашем проекте.</em></h1>
 <p class="intro">Этот бриф поможет понять задачу и подготовить предварительную оценку. Необязательно знать все технические детали — опишите идею своими словами. Перед началом работ отдельно согласуем состав, стоимость и сроки.</p>
 <div class="notice"><strong>Важно:</strong> отправка брифа не является заказом или заключением договора. Не указывайте пароли, платёжные реквизиты, паспортные данные и конфиденциальную информацию.</div>
-<form id="briefForm" aria-label="Бриф на разработку сайта">
+<form id="briefForm" aria-label="Бриф на разработку сайта" novalidate>
 <div class="two">
 <div class="group"><label for="name">Как к вам обращаться *</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="Имя"></div>
 <div class="group"><label for="email">Электронная почта *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" required placeholder="name@example.com"></div>
@@ -106,10 +109,40 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)!important;box
 </main>
 <footer><div class="wrap">© 2026 FRONTIER STUDIO · <a href="./">Главная</a> · <a href="./privacy.html">Обработка данных</a> · <a href="mailto:frontier.studions@gmail.com">Связаться</a></div></footer>
 <script>
+
 const form=document.getElementById('briefForm');
+const original=[...form.children];
+const groups=[
+ [original[0],original[1]],
+ [original[2],original[3],original[4]],
+ original.slice(5)
+];
+const stepNames=['Контакт и тип проекта','Объём и функции','Детали и отправка'];
+const steps=groups.map((items,index)=>{
+ const section=document.createElement('section');section.className='brief-step';section.dataset.step=String(index);section.hidden=index!==0;
+ const title=document.createElement('div');title.className='brief-step-title';title.innerHTML='<strong>'+stepNames[index]+'</strong><span>Шаг '+(index+1)+' из 3</span>';section.append(title);
+ items.forEach(node=>section.append(node));
+ const actions=document.createElement('div');actions.className='brief-step-actions';
+ if(index>0){const back=document.createElement('button');back.type='button';back.className='btn secondary';back.textContent='← Назад';back.addEventListener('click',()=>showStep(index-1));actions.append(back)}
+ if(index<2){const next=document.createElement('button');next.type='button';next.className='btn';next.textContent='Продолжить →';next.addEventListener('click',()=>{if(validateStep(section))showStep(index+1)});actions.append(next)}
+ section.append(actions);form.append(section);return section;
+});
+const progress=document.createElement('div');progress.id='briefWizard';progress.className='brief-progress';progress.setAttribute('aria-label','Прогресс заполнения');
+for(let i=0;i<3;i++){const bar=document.createElement('span');if(i===0)bar.classList.add('active');progress.append(bar)}
+form.prepend(progress);
+const progressBars=[...progress.children];let activeStep=0;
+function showStep(index){activeStep=index;steps.forEach((step,i)=>step.hidden=i!==index);progressBars.forEach((bar,i)=>bar.classList.toggle('active',i<=index));const title=steps[index].querySelector('.brief-step-title');title.querySelector('span').textContent='Шаг '+(index+1)+' из 3';title.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function validateStep(section){for(const field of section.querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){field.reportValidity();field.focus();return false}}return true}
+const params=new URLSearchParams(location.search),estimate=params.get('estimate');
+if(estimate){
+ const banner=document.createElement('div');banner.className='estimate-notice';banner.innerHTML='<strong>Расчёт с главной страницы:</strong> <span></span><br>Это предварительный ориентир, не окончательная смета.';
+ banner.querySelector('span').textContent=estimate;form.before(banner);
+ const hidden=document.createElement('input');hidden.type='hidden';hidden.name='estimate_range';hidden.value=estimate;form.append(hidden);
+}
+
 form.addEventListener('submit',async event=>{
  event.preventDefault();
- if(!form.reportValidity()) return;
+ if(!validateStep(steps[0])||!validateStep(steps[1])||!validateStep(steps[2])){const invalid=steps.findIndex(step=>!validateStep(step));if(invalid>=0)showStep(invalid);return;}
  const button=document.getElementById('sendBrief'),status=document.getElementById('briefStatus');
  const data=new FormData(form),payload={};
  for(const [key,value] of data.entries()){
