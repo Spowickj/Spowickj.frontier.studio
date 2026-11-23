@@ -188,6 +188,12 @@ input:focus,textarea:focus,select:focus{border-color:#4f8cff!important;box-shado
 .panel,.card,.project,form,.notice{border-color:rgba(142,184,255,.14)!important}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+
+<style id="frontier-blue-atmosphere">
+.hero:before{filter:hue-rotate(155deg) saturate(.78) brightness(.72)!important}
+.hero:after{border-color:rgba(79,140,255,.2)!important;box-shadow:0 0 0 70px rgba(79,140,255,.035),0 0 0 140px rgba(79,140,255,.022)!important}
+.project:hover,.card:hover,.service:hover{border-color:rgba(79,140,255,.42)!important}
+</style>
 </head><body class="js">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 <header><div class="wrap nav"><a class="logo" href="#">FRONTIER<b>.</b></a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav">Меню ☰</button><nav id="primaryNav" aria-label="Основная навигация"><a href="#work">Работы</a><a href="#services">Услуги</a><a href="#estimator">Расчёт</a><a href="#process">Процесс</a><a href="#standards">Правила</a><a href="./about.html">О студии</a><a href="./help.html">Помощь</a><a href="./brief.html">Бриф</a><a href="#contact">Контакт</a></nav><a class="btn alt" href="#contact">Обсудить проект ↗</a></div></header>
@@ -259,6 +265,7 @@ document.getElementById('form').addEventListener('submit',async e=>{
         email:form.elements.email.value,
         message:form.elements.message.value,
         service:form.elements.service.value,
+        consent:form.elements.consent.checked ? 'Согласие подтверждено' : 'Нет',
         _subject:'Новая заявка — FRONTIER STUDIO',
         _honey:form.elements._honey.value
       })
