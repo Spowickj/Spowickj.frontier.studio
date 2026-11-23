@@ -265,9 +265,11 @@ if(estimator){
 }
 
 const menuToggle=document.getElementById("menuToggle"),primaryNav=document.getElementById("primaryNav");
-menuToggle.addEventListener("click",()=>{const open=primaryNav.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.textContent=open?"Закрыть ×":"Меню ☰"});
-const closeMenu=()=>{primaryNav.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="Меню ☰"};primaryNav.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+const closeMenu=()=>{if(!menuToggle||!primaryNav)return;primaryNav.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="Меню ☰"};
+if(menuToggle&&primaryNav){menuToggle.addEventListener("click",()=>{const open=primaryNav.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.textContent=open?"Закрыть ×":"Меню ☰"});primaryNav.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});}
+const revealItems=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');io.unobserve(entry.target)}}),{threshold:.12});revealItems.forEach(item=>io.observe(item));}
+else{revealItems.forEach(item=>item.classList.add('show'));}
 document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
   const form=e.currentTarget,button=document.getElementById('submitBtn'),note=document.getElementById('note');
@@ -286,6 +288,7 @@ document.getElementById('form').addEventListener('submit',async e=>{
         _honey:form.elements._honey.value
       })
     });
+    if(!response.ok) throw new Error('Сервис временно недоступен (HTTP '+response.status+').');
     const data=await response.json();
     if(String(data.success)!=='true') throw new Error(data.message||'Сервис не принял заявку.');
     note.textContent='Заявка отправлена. Спасибо! Мы получили сообщение.';
