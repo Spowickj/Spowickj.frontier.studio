@@ -19,6 +19,62 @@ footer{padding:28px 0;color:var(--muted);font-size:11px}.foot{display:flex;justi
 .menu-toggle{display:none}
 @media(max-width:720px){.nav{position:relative}.menu-toggle{display:block;background:transparent;border:1px solid var(--line);color:var(--cream);padding:9px 12px;font:inherit;font-size:12px}.nav nav{display:none;position:absolute;top:64px;left:0;right:0;padding:18px;background:var(--panel);border:1px solid var(--line);flex-direction:column;gap:16px;z-index:10}.nav nav.open{display:flex}.nav>.btn{display:none}.steps{grid-template-columns:1fr 1fr}.hero h1{font-size:58px}}
 @media(max-width:430px){.steps{grid-template-columns:1fr}.hero h1{font-size:58px}}
+
+/* FRONTIER visual system refresh */
+:root{--bg:#10100f;--panel:#191815;--cream:#f0eadf;--muted:#aaa294;--line:#37342d;--accent:#d87943;--accent-soft:#ef9a65}
+body{font-family:"DM Sans",Inter,Arial,sans-serif;letter-spacing:-.012em}
+.logo{font-size:15px;letter-spacing:.19em}
+header{background:rgba(16,16,15,.88);border-bottom-color:#ffffff12}
+nav{gap:clamp(14px,2.3vw,30px);font-size:12px;letter-spacing:.035em}
+nav a{transition:color .2s ease}
+.hero{min-height:690px}
+.hero:before{background:linear-gradient(90deg,#10100f 2%,rgba(16,16,15,.94) 34%,rgba(16,16,15,.52) 72%,rgba(16,16,15,.3)),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero .wrap{padding-top:110px;padding-bottom:110px}
+.hero .eyebrow,.eyebrow{letter-spacing:.23em}
+.hero h1{max-width:900px;font-size:clamp(64px,10vw,124px);letter-spacing:-.085em}
+.hero p{max-width:560px;font-size:17px;line-height:1.8;color:#c9c2b6}
+.btn{padding:15px 22px;letter-spacing:.1em;transition:transform .2s ease,filter .2s ease,border-color .2s ease}
+.btn.alt{border-color:#5b554a}
+.btn:hover{filter:brightness(1.08);transform:translateY(-3px)}
+section{padding:112px 0}
+.head{margin-bottom:48px}
+.head h2{letter-spacing:-.075em}
+.project{overflow:hidden;border-color:#ffffff13;background:linear-gradient(145deg,#201e19,#171613);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.project:hover{transform:translateY(-7px);border-color:#a96a46;box-shadow:0 18px 50px #0005}
+.photo{height:330px;transition:transform .55s ease}
+.project:hover .photo{transform:scale(1.025)}
+.details{padding:28px}
+.details h3{letter-spacing:-.045em}
+.service{transition:background .25s ease}
+.service:hover{background:linear-gradient(110deg,#ffffff06,transparent)}
+.price{letter-spacing:-.045em}
+.step{padding-top:20px}
+.step h3{letter-spacing:-.035em}
+.faq-list details{padding:22px 4px}
+.faq-list summary{font-size:16px}
+.faq-list details[open]{padding-bottom:24px}
+.contact{align-items:start}
+.contact h2{letter-spacing:-.08em}
+form{padding:26px;background:var(--panel);border:1px solid var(--line)}
+input,textarea,select{border-radius:0;background:#12110f;border-color:#454137;font-size:14px;transition:border-color .2s ease,background .2s ease}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--accent);background:#171510}
+form .btn{width:100%}
+form .btn:disabled{opacity:.65;cursor:wait;transform:none}
+.note{line-height:1.7}
+footer{border-top:1px solid #ffffff12}
+footer a{transition:color .2s ease}
+footer a:hover{color:var(--accent)}
+@media(max-width:720px){
+ .hero{min-height:590px}
+ .hero:before{background:linear-gradient(90deg,#10100f 0%,rgba(16,16,15,.86) 62%,rgba(16,16,15,.58)),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=80') center/cover}
+ .hero .wrap{padding-top:85px;padding-bottom:85px}
+ .hero h1{font-size:clamp(58px,14vw,78px)}
+ section{padding:78px 0}
+ .photo{height:250px}
+ form{padding:18px}
+}
+@media(prefers-reduced-motion:reduce){.photo,.project,.btn{transition:none}}
+
 </style></head><body class="js">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 <header><div class="wrap nav"><a class="logo" href="#">FRONTIER<b>.</b></a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav">Меню ☰</button><nav id="primaryNav" aria-label="Основная навигация"><a href="#work">Работы</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="./about.html">О студии</a><a href="#contact">Контакт</a></nav><a class="btn alt" href="#contact">Обсудить проект ↗</a></div></header>
@@ -26,7 +82,8 @@ footer{padding:28px 0;color:var(--muted);font-size:11px}.foot{display:flex;justi
 <section id="work"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">01 / Избранное</div><h2>Не слова.<br>Результат.</h2></div><p>Каждый проект начинается с идеи. Мы превращаем её в цельный цифровой опыт — от первого экрана до последней детали.</p></div><div class="projects"><article class="project reveal"><div class="photo p1"></div><div class="details"><small>01 · Concept / Landing</small><h3>FRONTIER</h3><p>Атмосферная цифровая витрина с характером и собственным визуальным языком.</p><a class="service-link" href="./projects/frontier.html">Смотреть концепт ↗</a></div></article><article class="project reveal"><div class="photo p2"></div><div class="details"><small>02 · Concept / E-commerce</small><h3>DRIP</h3><p>Концепт магазина с каталогом, фильтрами и интерактивной корзиной.</p><a class="service-link" href="./projects/drip.html">Смотреть кейс ↗</a><br><a class="service-link" href="./drip.html">Открыть демо-магазин ↗</a></div></article></div></div></section>
 <section id="services"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">02 / Услуги и цены</div><h2>Выбираем<br><em>решение.</em></h2></div><p>Четыре направления работы. Указана стартовая стоимость простых проектов; точная смета зависит от объёма и требований.</p></div><div class="services service-grid"><article class="service reveal"><div class="eyebrow">01 — WEBSITE</div><h3>Лендинги и сайты-визитки</h3><div class="price">от 7 000 ₽</div><p>Одностраничные сайты для услуг, специалистов и небольших компаний. Адаптивная вёрстка, блоки о компании, услугах и контактах.</p><a class="service-link" href="#contact" data-service="Лендинг или сайт-визитка">Обсудить проект ↗</a></article><article class="service reveal"><div class="eyebrow">02 — WEB DESIGN</div><h3>Дизайн сайтов</h3><div class="price">от 4 000 ₽</div><p>Визуальная концепция, структура, типографика и макет страницы. Программная разработка рассчитывается отдельно.</p><a class="service-link" href="#contact" data-service="Дизайн сайта">Обсудить проект ↗</a></article><article class="service reveal"><div class="eyebrow">03 — SUPPORT</div><h3>Доработка и исправление</h3><div class="price">от 1 500 ₽</div><p>Небольшие изменения, исправление отображения, адаптация и устранение понятных ошибок в существующем сайте.</p><a class="service-link" href="#contact" data-service="Доработка или исправление сайта">Обсудить проект ↗</a></article><article class="service reveal"><div class="eyebrow">04 — E-COMMERCE</div><h3>Интернет-магазины</h3><div class="price">от 20 000 ₽</div><p>Каталог, карточки товаров и корзина для небольшого магазина. Платёжные интеграции и сложные функции оцениваются отдельно.</p><a class="service-link" href="#contact" data-service="Интернет-магазин">Обсудить проект ↗</a></article></div><p class="price-note reveal">Стартовая цена — ориентир для базового объёма работ, не окончательная стоимость. Перед началом согласуем задачу, состав работ, сроки и итоговую смету.</p></div></section>
 <section id="process"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">03 / Как работаем</div><h2>Понятный<br>маршрут.</h2></div><p>На каждом этапе понятно, что происходит и что будет дальше.</p></div><div class="steps"><article class="step reveal"><b>STEP 01</b><h3>Знакомство</h3><p>Обсуждаем задачу, аудиторию и желаемый результат.</p></article><article class="step reveal"><b>STEP 02</b><h3>Концепция</h3><p>Собираем структуру и определяем визуальное направление.</p></article><article class="step reveal"><b>STEP 03</b><h3>Сборка</h3><p>Создаём страницы и подключаем нужные взаимодействия.</p></article><article class="step reveal"><b>STEP 04</b><h3>Передача</h3><p>Проверяем результат и готовим проект к публикации.</p></article></div></div></section>
-<section id="faq"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">05 / FAQ</div><h2>Коротко<br><em>о главном.</em></h2></div><p>Ответы на вопросы, которые обычно возникают до первого обсуждения проекта.</p></div><div class="faq-list reveal"><details><summary>Сколько стоит сайт?</summary><p>На главной указаны стартовые ориентиры. Итоговая стоимость зависит от количества страниц, контента, дизайна и нужных функций. До начала работ согласуем состав и цену.</p></details><details><summary>Вы работаете с готовыми сайтами?</summary><p>Да, можно обсудить небольшие доработки, адаптацию и исправление конкретных ошибок. Сначала нужно посмотреть сайт и уточнить задачу.</p></details><details><summary>Можно ли подключить оплату и полноценный магазин?</summary><p>Такие функции требуют отдельной оценки, подходящей платформы и безопасной настройки. Демонстрационный DRIP-магазин на этом сайте не принимает заказы и платежи.</p></details><details><summary>Как начинается работа?</summary><p>С короткого обсуждения задачи. Затем фиксируем объём, сроки, стоимость и ограничения — и только после согласования переходим к реализации.</p></details></div></div></section>\n<section id="contact"><div class="wrap contact"><div class="reveal"><div class="eyebrow">04 / Контакт</div><h2>Есть идея?<br><em>Давай обсудим.</em></h2><p>Расскажи, что хочешь создать. Мы вернёмся с вопросами и предложим следующий шаг.</p></div><form id="form" class="reveal" aria-label="Форма обращения"><input id="name" name="name" aria-label="Как к тебе обращаться?" autocomplete="name" placeholder="Как к тебе обращаться?" required><select id="service" name="service" aria-label="Какая услуга интересует?" required><option value="" selected disabled>Какая услуга интересует?</option><option>Лендинг или сайт-визитка</option><option>Дизайн сайта</option><option>Доработка или исправление сайта</option><option>Интернет-магазин</option><option>Пока не определился</option></select><input id="email" name="email" type="email" aria-label="Твой e-mail (необязательно)" autocomplete="email" placeholder="Твой e-mail (необязательно)"><textarea id="msg" name="message" aria-label="Пара слов о проекте" placeholder="Пара слов о проекте..." required></textarea><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" /><input type="hidden" name="_subject" value="Новая заявка — FRONTIER STUDIO"><button class="btn" id="submitBtn" type="submit">Отправить заявку ↗</button><div class="note" id="note" role="status" aria-live="polite">Не указывай пароли, платёжные данные и другую чувствительную информацию. Отправка выполняется через внешний сервис FormSubmit. <a href="./privacy.html" style="text-decoration:underline">Как обрабатывается сообщение</a>.</div></form></div></section></main>
+<section id="faq"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">05 / FAQ</div><h2>Коротко<br><em>о главном.</em></h2></div><p>Ответы на вопросы, которые обычно возникают до первого обсуждения проекта.</p></div><div class="faq-list reveal"><details><summary>Сколько стоит сайт?</summary><p>На главной указаны стартовые ориентиры. Итоговая стоимость зависит от количества страниц, контента, дизайна и нужных функций. До начала работ согласуем состав и цену.</p></details><details><summary>Вы работаете с готовыми сайтами?</summary><p>Да, можно обсудить небольшие доработки, адаптацию и исправление конкретных ошибок. Сначала нужно посмотреть сайт и уточнить задачу.</p></details><details><summary>Можно ли подключить оплату и полноценный магазин?</summary><p>Такие функции требуют отдельной оценки, подходящей платформы и безопасной настройки. Демонстрационный DRIP-магазин на этом сайте не принимает заказы и платежи.</p></details><details><summary>Как начинается работа?</summary><p>С короткого обсуждения задачи. Затем фиксируем объём, сроки, стоимость и ограничения — и только после согласования переходим к реализации.</p></details></div></div></section>
+<section id="contact"><div class="wrap contact"><div class="reveal"><div class="eyebrow">04 / Контакт</div><h2>Есть идея?<br><em>Давай обсудим.</em></h2><p>Расскажи, что хочешь создать. Мы вернёмся с вопросами и предложим следующий шаг.</p></div><form id="form" class="reveal" aria-label="Форма обращения"><input id="name" name="name" aria-label="Как к тебе обращаться?" autocomplete="name" placeholder="Как к тебе обращаться?" required><select id="service" name="service" aria-label="Какая услуга интересует?" required><option value="" selected disabled>Какая услуга интересует?</option><option>Лендинг или сайт-визитка</option><option>Дизайн сайта</option><option>Доработка или исправление сайта</option><option>Интернет-магазин</option><option>Пока не определился</option></select><input id="email" name="email" type="email" aria-label="Твой e-mail (необязательно)" autocomplete="email" placeholder="Твой e-mail (необязательно)"><textarea id="msg" name="message" aria-label="Пара слов о проекте" placeholder="Пара слов о проекте..." required></textarea><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" /><input type="hidden" name="_subject" value="Новая заявка — FRONTIER STUDIO"><button class="btn" id="submitBtn" type="submit">Отправить заявку ↗</button><div class="note" id="note" role="status" aria-live="polite">Не указывай пароли, платёжные данные и другую чувствительную информацию. Отправка выполняется через внешний сервис FormSubmit. <a href="./privacy.html" style="text-decoration:underline">Как обрабатывается сообщение</a>.</div></form></div></section></main>
 <footer><div class="wrap foot"><span>© 2026 FRONTIER STUDIO</span><span>Built with intent. Made to matter.</span><a href="./about.html">О студии</a><a href="mailto:frontier.studions@gmail.com">frontier.studions@gmail.com</a><a href="#">Наверх ↑</a></div></footer>
 <script>
 document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('service').value=link.dataset.service}));
