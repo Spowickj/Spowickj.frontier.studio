@@ -18,6 +18,27 @@ form{margin-top:32px;padding:clamp(18px,4vw,34px);background:var(--panel);border
 @media(max-width:620px){.two,.checks{grid-template-columns:1fr}.back{font-size:11px}main{padding-top:48px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<style id="frontier-premium-refresh">
+:root{--bg:#0b0c0d;--panel:#121516;--cream:#f4f1e9;--muted:#a3a5a3;--line:#292d2e;--accent:#e58a50;--accent-soft:#f3b17c}
+*{box-sizing:border-box}body{background:radial-gradient(ellipse at 90% 3%,rgba(229,138,80,.1),transparent 36%),var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;letter-spacing:-.015em}
+header{background:rgba(11,12,13,.8);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.09);padding:21px 0}
+.brand{font:800 15px "Space Grotesk",sans-serif;letter-spacing:.17em}.brand b,.eyebrow{color:var(--accent)}.back{transition:color .2s}.back:hover{color:var(--accent)}
+main{padding:clamp(52px,8vw,95px) 0 100px}.eyebrow{font-size:10px;letter-spacing:.23em;font-weight:800}
+h1{font:600 clamp(48px,8vw,84px)/.94 "Space Grotesk",sans-serif;letter-spacing:-.085em;margin:22px 0}.intro{font-size:17px;line-height:1.85;color:#c2c4bf;max-width:690px}
+.notice{border:1px solid rgba(229,138,80,.22);border-left:2px solid var(--accent);background:linear-gradient(100deg,rgba(229,138,80,.08),rgba(255,255,255,.015));padding:18px 21px;color:var(--muted)}
+form{background:linear-gradient(145deg,#15191a,#101314);border:1px solid #303536;box-shadow:0 30px 100px rgba(0,0,0,.24);padding:clamp(20px,4vw,42px);gap:21px}
+.group{gap:9px}.group label,.legend{font-size:12px;letter-spacing:.015em}.hint{color:#858b88}
+input,textarea,select{background:#0c1011;border:1px solid #343a3a;border-radius:2px;color:var(--cream);padding:16px;font:14px "DM Sans",sans-serif;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(229,138,80,.09)}
+.check{background:rgba(255,255,255,.018);border:1px solid var(--line);transition:border-color .2s,color .2s}.check:has(input:checked){border-color:rgba(229,138,80,.65);color:var(--cream)}
+.check input,.consent input{accent-color:var(--accent)}
+.consent{line-height:1.7}.consent a{color:var(--accent-soft)}
+.btn{min-height:52px;background:var(--accent);color:#15120f;border:1px solid var(--accent);font:800 11px "DM Sans",sans-serif;letter-spacing:.12em;transition:background .2s,transform .2s}
+.btn:hover{background:var(--accent-soft);transform:translateY(-2px)}
+.status{line-height:1.7}footer{border-color:var(--line)}footer a:hover{color:var(--accent)}
+@media(max-width:620px){main{padding-top:48px}.two,.checks{grid-template-columns:1fr}form{padding:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+</style>
 </head>
 <body>
 <header><div class="wrap"><a class="brand" href="./">FRONTIER<b>.</b></a><a class="back" href="./">← На главную</a></div></header>
