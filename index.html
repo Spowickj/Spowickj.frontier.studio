@@ -140,7 +140,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @media(max-width:850px){.nav{height:70px}.nav>.btn{display:none}.hero{min-height:650px}.hero:after{right:-45%;top:25%}.projects{grid-template-columns:1fr 1fr}.photo{height:260px}}
 @media(max-width:620px){.hero{min-height:650px}.hero .wrap{padding:90px 0}.hero h1{font-size:clamp(62px,15vw,88px)}.hero:before{background:linear-gradient(90deg,rgba(11,12,13,.94),rgba(11,12,13,.68)),linear-gradient(0deg,#0b0c0d,transparent 55%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85') center/cover}.projects,.service-grid,.steps,.contact{grid-template-columns:1fr}.service-grid .service,.service-grid .service:nth-child(even){padding:25px 0;border-left:0}.photo{height:250px}.head{display:block}.head p{margin-top:18px}.foot{flex-wrap:wrap;gap:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style></head><body class="js">
+</style>
+<style id="frontier-luxury-ui">
+:root{--ui-radius:24px;--ui-radius-sm:16px;--ui-shadow:0 18px 55px rgba(0,0,0,.24)}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(229,138,80,.32);color:inherit}
+a,button,input,textarea,select{transition:color .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease}
+header,.top{background:rgba(11,12,13,.76)!important;backdrop-filter:blur(24px) saturate(150%)!important;-webkit-backdrop-filter:blur(24px) saturate(150%);border-bottom:1px solid rgba(255,255,255,.075)!important}
+.btn,.button,button,.menu-toggle{border-radius:999px!important;min-height:48px;padding:14px 23px!important;letter-spacing:.045em!important;box-shadow:0 7px 24px rgba(229,138,80,.13);font-weight:700!important}
+.btn:hover,.button:hover,button:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(229,138,80,.22);filter:brightness(1.07)}
+.btn.alt{background:rgba(255,255,255,.045)!important;color:var(--cream)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:none}
+nav a{border-radius:999px;padding:9px 13px;transition:background .2s,color .2s}
+nav a:hover{background:rgba(255,255,255,.065)}
+.card,.service,.project,.price-card,.notice,.panel,form,.step{border-radius:var(--ui-radius)!important;box-shadow:var(--ui-shadow)}
+.card,.service,.step{border:1px solid rgba(255,255,255,.085)!important;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018))!important;overflow:hidden}
+.card:hover,.service:hover{transform:translateY(-5px);border-color:rgba(229,138,80,.38)!important;box-shadow:0 24px 60px rgba(0,0,0,.32)}
+.faq-list details{border:1px solid rgba(255,255,255,.09)!important;border-radius:18px!important;padding:19px 22px!important;margin:10px 0;background:rgba(255,255,255,.025)}
+.faq-list details[open]{background:linear-gradient(110deg,rgba(229,138,80,.09),rgba(255,255,255,.025))!important;border-color:rgba(229,138,80,.28)!important}
+input,textarea,select{border-radius:14px!important;background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.13)!important;padding:15px 17px!important}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)!important;box-shadow:0 0 0 4px rgba(229,138,80,.12)!important;outline:0!important}
+.check,.consent,.notice{border-radius:14px!important}
+.hero{border-radius:0 0 30px 30px}
+.eyebrow{letter-spacing:.19em}
+@media(max-width:760px){nav a{padding:12px 14px}.btn,.button{min-height:46px}.card,.service,.step,form{border-radius:20px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head><body class="js">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 <header><div class="wrap nav"><a class="logo" href="#">FRONTIER<b>.</b></a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav">Меню ☰</button><nav id="primaryNav" aria-label="Основная навигация"><a href="#work">Работы</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#standards">Правила</a><a href="./about.html">О студии</a><a href="./brief.html">Бриф</a><a href="#contact">Контакт</a></nav><a class="btn alt" href="#contact">Обсудить проект ↗</a></div></header>
 <main id="main"><section class="hero" aria-label="Главный экран"><div class="wrap"><div class="eyebrow">Independent digital studio · Est. 2026</div><h1>Создаём<br><em>цифровые</em><br>пространства.</h1><p>Разрабатываем сайты для небольших компаний, проектов и специалистов: от первой структуры до готовой адаптивной страницы. Понятный объём работ, согласованная стоимость и связь на каждом этапе.</p><p class="hero-trust"><span>ОТВЕТСТВЕННОСТЬ — НЕ ДЕКОРАЦИЯ.</span> Соблюдаем договорённости, остаёмся на связи и заранее предупреждаем об изменениях.</p><div class="actions"><a class="btn" href="#work">Смотреть работы</a><a class="btn alt" href="#contact">Есть идея? →</a><a class="service-link" href="./brief.html">Заполнить бриф ↗</a></div></div></section>
