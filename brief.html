@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10100f"><meta name="color-scheme" content="dark">
+<meta name="description" content="Бриф FRONTIER STUDIO: расскажите о задаче, типе сайта, бюджете и сроках, чтобы получить предварительную оценку проекта.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://spowickj.github.io/Spowickj.frontier.studio/brief.html">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="FRONTIER STUDIO"><meta property="og:title" content="Бриф на разработку сайта — FRONTIER STUDIO"><meta property="og:description" content="Опишите задачу и получите следующий шаг по проекту.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Бриф на разработку сайта — FRONTIER STUDIO</title>
+<style>
+:root{--bg:#10100f;--panel:#191815;--cream:#f0eadf;--muted:#aaa294;--line:#37342d;--accent:#d87943}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font:15px/1.7 "DM Sans",Arial,sans-serif}a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:#10100fee;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff14;padding:20px 0}.brand{font:800 14px "Space Grotesk",sans-serif;letter-spacing:.18em;text-decoration:none}.brand b,.eyebrow{color:var(--accent)}.back{float:right;color:var(--muted);font-size:12px;text-decoration:none}
+main{padding:66px 0 90px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.055em}h1{font-size:clamp(42px,8vw,76px);line-height:.98;margin:16px 0}h1 em{color:var(--accent);font-style:normal}.intro{max-width:680px;color:var(--muted);font-size:16px}.notice{margin:28px 0;padding:17px 20px;border-left:2px solid var(--accent);background:#ffffff06;color:var(--muted);font-size:13px}
+form{margin-top:32px;padding:clamp(18px,4vw,34px);background:var(--panel);border:1px solid var(--line);display:grid;gap:18px}.group{display:grid;gap:8px}.group label,.legend{font-size:12px;font-weight:700;color:var(--cream)}.hint{font-size:11px;color:var(--muted)}input,textarea,select{width:100%;background:#12110f;border:1px solid #454137;border-radius:0;padding:14px;color:var(--cream);font:inherit;font-size:14px}input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);outline-offset:2px}textarea{min-height:110px;resize:vertical}select:invalid{color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check{display:flex;align-items:flex-start;gap:9px;padding:10px;border:1px solid var(--line);font-size:12px;color:var(--muted)}.check input{width:16px;height:16px;margin:2px 0 0;accent-color:var(--accent);flex:none}.consent{display:flex;align-items:flex-start;gap:10px;color:var(--muted);font-size:11px}.consent input{width:17px;height:17px;margin:1px 0 0;accent-color:var(--accent);flex:none}.consent a{text-decoration:underline}.btn{border:0;background:var(--accent);color:#17130f;padding:15px 20px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.btn:disabled{opacity:.6;cursor:wait}.status{font-size:12px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:11px}footer a{color:var(--cream)}
+@media(max-width:620px){.two,.checks{grid-template-columns:1fr}.back{font-size:11px}main{padding-top:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="./">FRONTIER<b>.</b></a><a class="back" href="./">← На главную</a></div></header>
+<main class="wrap">
+<div class="eyebrow">PROJECT INTAKE / FRONTIER STUDIO</div>
+<h1>Расскажите о<br><em>вашем проекте.</em></h1>
+<p class="intro">Этот бриф поможет понять задачу и подготовить предварительную оценку. Необязательно знать все технические детали — опишите идею своими словами. Перед началом работ отдельно согласуем состав, стоимость и сроки.</p>
+<div class="notice"><strong>Важно:</strong> отправка брифа не является заказом или заключением договора. Не указывайте пароли, платёжные реквизиты, паспортные данные и конфиденциальную информацию.</div>
+<form id="briefForm" aria-label="Бриф на разработку сайта">
+<div class="two">
+<div class="group"><label for="name">Как к вам обращаться *</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="Имя"></div>
+<div class="group"><label for="email">Электронная почта *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" required placeholder="name@example.com"></div>
+</div>
+<div class="group"><label for="project_type">Какой сайт нужен? *</label><select id="project_type" name="project_type" required><option value="" selected disabled>Выберите тип проекта</option><option>Лендинг или сайт-визитка</option><option>Сайт компании / несколько страниц</option><option>Интернет-магазин</option><option>Дизайн без разработки</option><option>Доработка существующего сайта</option><option>Пока не определился</option></select></div>
+<div class="two">
+<div class="group"><label for="budget">Ориентир по бюджету</label><select id="budget" name="budget"><option>Пока не определился</option><option>До 10 000 ₽</option><option>10 000–20 000 ₽</option><option>20 000–40 000 ₽</option><option>40 000 ₽ и выше</option></select></div>
+<div class="group"><label for="deadline">Когда нужен результат?</label><select id="deadline" name="deadline"><option>Срок пока не определён</option><option>Как можно скорее</option><option>В течение 1–2 недель</option><option>В течение месяца</option><option>Позже, конкретной даты нет</option></select></div>
+</div>
+<div class="group"><span class="legend">Какие разделы или функции нужны?</span><span class="hint">Можно выбрать несколько вариантов.</span><div class="checks">
+<label class="check"><input type="checkbox" name="features" value="О компании / обо мне">О компании / обо мне</label>
+<label class="check"><input type="checkbox" name="features" value="Услуги и цены">Услуги и цены</label>
+<label class="check"><input type="checkbox" name="features" value="Портфолио / галерея">Портфолио / галерея</label>
+<label class="check"><input type="checkbox" name="features" value="Форма заявки">Форма заявки</label>
+<label class="check"><input type="checkbox" name="features" value="Каталог товаров">Каталог товаров</label>
+<label class="check"><input type="checkbox" name="features" value="Корзина">Корзина</label>
+<label class="check"><input type="checkbox" name="features" value="Блог / новости">Блог / новости</label>
+<label class="check"><input type="checkbox" name="features" value="Другая функция">Другая функция</label>
+</div></div>
+<div class="group"><label for="content">Есть ли материалы?</label><select id="content" name="content"><option>Пока ничего нет</option><option>Есть тексты</option><option>Есть фотографии / изображения</option><option>Есть логотип и фирменный стиль</option><option>Есть готовые материалы и структура</option></select></div>
+<div class="group"><label for="references">Примеры сайтов или ссылки</label><input id="references" name="references" maxlength="500" placeholder="Ссылки на сайты, которые нравятся (необязательно)"></div>
+<div class="group"><label for="description">Опишите задачу *</label><textarea id="description" name="description" maxlength="4000" required placeholder="Чем занимаетесь, для кого нужен сайт, что он должен помогать делать?"></textarea><span class="hint">До 4 000 символов. Можно написать обычным языком, без технического задания.</span></div>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<input type="hidden" name="_subject" value="Новый бриф — FRONTIER STUDIO">
+<label class="consent"><input type="checkbox" id="consent" name="consent" value="Согласие подтверждено" required><span>Я подтверждаю, что ознакомился(ась) с <a href="./privacy.html" target="_blank" rel="noopener">информацией об обработке персональных данных</a> и отправляю эти сведения для рассмотрения моего запроса. *</span></label>
+<button class="btn" id="sendBrief" type="submit">Отправить бриф ↗</button>
+<div class="status" id="briefStatus" role="status" aria-live="polite">После отправки сообщение передаётся через FormSubmit на frontier.studions@gmail.com.</div>
+</form>
+</main>
+<footer><div class="wrap">© 2026 FRONTIER STUDIO · <a href="./">Главная</a> · <a href="./privacy.html">Обработка данных</a> · <a href="mailto:frontier.studions@gmail.com">Связаться</a></div></footer>
+<script>
+const form=document.getElementById('briefForm');
+form.addEventListener('submit',async event=>{
+ event.preventDefault();
+ if(!form.reportValidity()) return;
+ const button=document.getElementById('sendBrief'),status=document.getElementById('briefStatus');
+ const data=new FormData(form),payload={};
+ for(const [key,value] of data.entries()){
+  if(key==='features'){payload.features=payload.features||[];payload.features.push(value);}
+  else payload[key]=value;
+ }
+ payload._subject='Новый бриф — FRONTIER STUDIO';
+ button.disabled=true;button.textContent='Отправляем…';status.textContent='Передаём бриф. Не закрывайте страницу.';
+ try{
+  const response=await fetch('https://formsubmit.co/ajax/frontier.studions@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+  const result=await response.json();
+  if(String(result.success)!=='true') throw new Error(result.message||'Сервис не принял сообщение.');
+  status.textContent='Бриф отправлен. Спасибо! Мы получили ваше сообщение.';
+  form.reset();
+ }catch(error){status.textContent='Не удалось отправить бриф: '+error.message+' Напишите напрямую: frontier.studions@gmail.com';}
+ finally{button.disabled=false;button.textContent='Отправить бриф ↗';}
+});
+const params=new URLSearchParams(location.search),preset={landing:'Лендинг или сайт-визитка',design:'Дизайн без разработки',support:'Доработка существующего сайта',shop:'Интернет-магазин'};
+if(params.get('service')&&preset[params.get('service')]) document.getElementById('project_type').value=preset[params.get('service')];
+</script>
+</body></html>
