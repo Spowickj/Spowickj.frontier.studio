@@ -15,6 +15,84 @@
 .drawer-backdrop{position:fixed;inset:0;background:#0008;z-index:10;opacity:0;pointer-events:none;transition:.2s}.drawer{position:fixed;right:0;top:0;height:100dvh;width:min(430px,100%);background:var(--bg);z-index:11;padding:25px;transform:translateX(105%);transition:.25s;display:flex;flex-direction:column}.drawer.open{transform:none}.drawer-backdrop.open{opacity:1;pointer-events:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.drawer-head h2{margin:0;font-size:25px}.close{border:0;background:none;font-size:25px}.cart-items{overflow:auto;flex:1}.cart-row{display:grid;grid-template-columns:68px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}.cart-thumb{width:68px;height:82px;background-size:cover;background-position:center}.cart-row small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:8px;margin-top:8px}.qty button{border:1px solid var(--line);background:none;width:25px;height:25px}.remove{border:0;background:none;color:var(--muted);font-size:11px;text-decoration:underline}.cart-bottom{border-top:1px solid var(--line);padding-top:18px}.total{display:flex;justify-content:space-between;font-weight:bold;font-size:18px}.demo-note{font-size:11px;color:var(--muted);margin:12px 0}.checkout{width:100%;padding:15px;background:var(--accent);border:0;color:#fff;font-weight:bold;text-transform:uppercase;letter-spacing:.1em}.checkout:disabled{opacity:.5;cursor:not-allowed}
 @media(max-width:760px){.hero{grid-template-columns:1fr}.hero-copy{padding:65px 20px}.hero-art{min-height:340px}.grid{grid-template-columns:repeat(2,1fr);gap:18px 12px}.product-image{height:260px}.navlinks{display:none}.story-inner{display:block}.section{padding:55px 0}.section-head{display:block}.filters{margin-top:20px}}
 @media(max-width:430px){.grid{grid-template-columns:1fr 1fr}.product-image{height:210px}.product h3{font-size:14px}.product-meta{font-size:12px}.brand{font-size:24px}.wrap{width:calc(100% - 28px)}}
+
+/* VISUAL REFRESH — editorial streetwear */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#f5f1e9;--ink:#171714;--muted:#77736b;--line:#d9d2c7;--accent:#ed5b35;--dark:#201f1b}
+body{font-family:'DM Sans',Arial,sans-serif;letter-spacing:-.015em}
+.top{padding:10px 14px;background:var(--accent);color:#171714;font-weight:800;letter-spacing:.16em}
+.nav{height:84px;border-bottom-color:#cfc7bb}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:32px;letter-spacing:-.11em}
+.navlinks{gap:34px;font-weight:700;font-size:11px}
+.navlinks a{position:relative;padding:10px 0}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:var(--accent);transition:width .2s}
+.navlinks a:hover:after{width:100%}
+.cart-open{border-radius:999px;padding:12px 19px;font-weight:700;transition:background .2s,color .2s}
+.cart-open:hover{background:var(--ink);color:white}
+.hero{min-height:620px;grid-template-columns:1.02fr .98fr;border-bottom:0;gap:18px;padding:18px 0}
+.hero-copy{padding:76px 4vw 76px max(24px,calc((100vw - 1180px)/2));background:#ebe5da;position:relative;overflow:hidden}
+.hero-copy:after{content:"DRIP / 001";position:absolute;right:22px;bottom:18px;font:700 10px 'Space Grotesk',sans-serif;letter-spacing:.18em;color:#a49b8e}
+.kicker{font-size:10px;letter-spacing:.22em}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(72px,9vw,132px);line-height:.78;letter-spacing:-.105em;margin:30px 0 24px}
+.hero p{font-size:15px;line-height:1.75;max-width:360px}
+.cta{border-radius:2px;padding:16px 23px;font-weight:800;transition:transform .2s,background .2s}
+.cta:hover{background:var(--accent);color:var(--ink);transform:translateY(-3px)}
+.hero-art{min-height:560px;background-position:center 32%;filter:saturate(.82);position:relative}
+.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#17171455)}
+.hero-art:after{content:"NEW SEASON  /  001";left:auto;right:20px;bottom:20px;background:var(--accent);font-weight:800}
+.section{padding:100px 0}
+.section-head{margin-bottom:38px}
+.section h2,.story h2{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.section h2{font-size:clamp(48px,6vw,76px)}
+.muted{color:#77736b}
+.filters{gap:7px}
+.filter{border-radius:999px;padding:11px 17px;font-weight:700;transition:all .18s}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}
+.product{position:relative}
+.product-image{height:390px;background-color:#e7e0d5;transition:transform .35s,filter .35s}
+.product:hover .product-image{filter:saturate(1.08);transform:translateY(-5px)}
+.product-image:after{content:"";position:absolute;inset:0;border:1px solid #00000008;pointer-events:none}
+.tag{font-weight:800;letter-spacing:.14em;padding:8px 11px}
+.product h3{font-family:'Space Grotesk',sans-serif;font-size:17px;letter-spacing:-.035em;margin:16px 0 5px}
+.product-meta{font-size:12px}
+.product-meta strong{font-size:15px;font-weight:800}
+.add{border-radius:2px;padding:14px;font-weight:800;transition:all .2s}
+.add:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.story{padding:90px 0;position:relative;overflow:hidden}
+.story:after{content:"DRIP";position:absolute;right:-20px;bottom:-90px;font:700 clamp(150px,25vw,330px)/1 'Space Grotesk',sans-serif;letter-spacing:-.12em;color:#ffffff08;pointer-events:none}
+.story-inner{position:relative;z-index:1}
+.story h2{font-size:clamp(48px,6vw,78px)}
+.story p{font-size:15px;line-height:1.9}
+.footer{padding:34px 0;font-weight:700;letter-spacing:.08em}
+.footer a{transition:color .2s}
+.footer a:hover{color:var(--accent)}
+.drawer{box-shadow:-20px 0 70px #0002}
+.drawer-head h2{font-family:'Space Grotesk',sans-serif}
+.checkout{border-radius:2px}
+@media(max-width:760px){
+ .nav{height:72px}.brand{font-size:29px}
+ .hero{padding:10px 0;gap:10px;min-height:0}
+ .hero-copy{padding:64px 24px 72px}
+ .hero h1{font-size:clamp(68px,15vw,100px)}
+ .hero-art{min-height:420px}
+ .section{padding:72px 0}
+ .grid{gap:26px 13px}
+ .product-image{height:290px}
+ .story{padding:70px 0}
+}
+@media(max-width:430px){
+ .top{font-size:8px;letter-spacing:.12em}
+ .hero-copy{padding:56px 18px 68px}
+ .hero-art{min-height:330px}
+ .section h2{font-size:48px}
+ .product-image{height:220px}
+ .product h3{font-size:13px}
+ .add{font-size:9px;padding:12px 6px}
+ .filter{padding:9px 12px}
+ .footer{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body>
