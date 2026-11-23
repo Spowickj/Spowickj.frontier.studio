@@ -135,7 +135,7 @@ const progressBars=[...progress.children];let activeStep=0;
 function showStep(index){activeStep=index;steps.forEach((step,i)=>step.hidden=i!==index);progressBars.forEach((bar,i)=>bar.classList.toggle('active',i<=index));const title=steps[index].querySelector('.brief-step-title');title.querySelector('span').textContent='Шаг '+(index+1)+' из 3';title.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function validateStep(section){for(const field of section.querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){field.reportValidity();field.focus();return false}}return true}
 function validateAllSteps(){for(let i=0;i<steps.length;i++){for(const field of steps[i].querySelectorAll('input,select,textarea')){if(field.required&&!field.checkValidity()){showStep(i);field.reportValidity();field.focus();return false}}}return true}
-const params=new URLSearchParams(location.search),estimate=params.get('estimate');
+const queryParams=new URLSearchParams(location.search),estimate=queryParams.get('estimate');
 if(estimate){
  const banner=document.createElement('div');banner.className='estimate-notice';banner.innerHTML='<strong>Расчёт с главной страницы:</strong> <span></span><br>Это предварительный ориентир, не окончательная смета.';
  banner.querySelector('span').textContent=estimate;form.before(banner);
