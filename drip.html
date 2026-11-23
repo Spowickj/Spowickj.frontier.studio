@@ -132,7 +132,7 @@ const products=[
 ];
 const CART_KEY="drip-demo-cart-v1";
 const cart={};
-try{const saved=JSON.parse(localStorage.getItem(CART_KEY)||"{}");for(const [id,qty] of Object.entries(saved)){if(products.some(p=>p.id===Number(id))&&Number.isInteger(qty)&&qty>0&&qty<100)cart[id]=qty}}catch(error){console.warn("Cart restore skipped",error)}
+try{const saved=JSON.parse(localStorage.getItem(CART_KEY)||"{}");for(const [id,qty] of Object.entries(saved)){if(products.some(p=>p.id===Number(id))&&Number.isInteger(qty)&&qty>0)cart[id]=Math.min(qty,99)}}catch(error){console.warn("Cart restore skipped",error)}
 function saveCart(){try{localStorage.setItem(CART_KEY,JSON.stringify(cart))}catch(error){console.warn("Cart save skipped",error)}}
 function announceCart(message){document.getElementById("cartStatus").textContent=message}
 const money=n=>new Intl.NumberFormat("ru-RU").format(n)+" ₽";
@@ -140,7 +140,7 @@ const productsEl=document.getElementById("products");
 function renderProducts(filter="all"){
  const list=products.filter(p=>filter==="all"||p.cat===filter);
  productsEl.innerHTML=list.map(p=>`<article class="product"><div class="product-image" style="background-image:url('${p.img}')"><span class="tag">${p.tag}</span></div><h3>${p.name}</h3><div class="product-meta"><span class="muted">DRIP / 001</span><strong>${money(p.price)}</strong></div><button class="add" type="button" data-add="${p.id}">Добавить в корзину +</button></article>`).join("");
- productsEl.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{const id=Number(b.dataset.add);cart[id]=(cart[id]||0)+1;saveCart();renderCart();announceCart(products.find(p=>p.id===id).name+" добавлен в корзину");b.textContent="Добавлено ✓";setTimeout(()=>b.textContent="Добавить в корзину +",900)}));
+ productsEl.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{const id=Number(b.dataset.add);if((cart[id]||0)>=99){announceCart("Достигнут демонстрационный лимит: 99 единиц одного товара");return}cart[id]=(cart[id]||0)+1;saveCart();renderCart();announceCart(products.find(p=>p.id===id).name+" добавлен в корзину");b.textContent="Добавлено ✓";setTimeout(()=>{if(b.isConnected)b.textContent="Добавить в корзину +"},900)}));
 }
 function renderCart(){
  const entries=Object.entries(cart).filter(([,q])=>q>0);
